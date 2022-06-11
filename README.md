@@ -1,45 +1,13 @@
-# What is this?
-This repo is a Trello clone built with VueJS. I decided to make this app over a free weekend of mine as a way to learn VueJS. Since I built the app purely as an exercise over the span of 48 hours it is not fully-functional or bug-free. The purpose of this project was to create an application that met the minimum requirements listed below. Each requirement was created to achieve a specific learning goal.
+a simple trello clone application built on vue and json-server. The point of this app is to be super easy to install and run, so that you don’t need to set up complicated database and have several scripts running in order to open app. Just install, write npm start and you are good to go.
 
-1. There are two views--one that displays the collection of board and another that displays the lists and cards for a given board (Vue router)
-2. The app uses components to modularize the code (Vue components)
-3. Both cards and lists are draggable (Vue directives)
-4. Local storage is used and continuously updated to synchronize data across components (Vue watch/data binding)
-5. You can create and edit cards, card descriptions, lists, and boards (Vue events)
-6. You can "star" your most important boards and see the filtered subset at the top of the board collection page (Vue filters)
+The original version of this app was built by Zack Thoutt and [you can find it here](https://github.com/zackthoutt/vue-trello). I updated the app to vue 2 and am using json-server and axios instead of local storage to handle data. I also implemented a simple JWT authentication by utilizing json-server-auth. You can also upload images to tasks, files are saved to your drive. 
 
-# Connect with me
+I’m pretty happy with the result, although I have to say, that I am no Vue expert. I learn by copying the work of others, code from stackoverflow, documentation(s) and then try to use that knowledge and code to make something on my own. I bet you could find some antipatterns in the code and you are more than welcome to create an issue with a suggestion. I made this app for a workshop I’m am doing on testing in Cypress.io. If you are intereseted how that looks, check out my [quick course on Udemy](https://www.udemy.com/course/cypress-test-automation-for-people-in-a-hurry/?couponCode=D7F5FD6D19C9A5FF823D) (link with a discount coupon, cause you’re nice), although I’m using another app there. Maybe next time.
 
-If you'd like to collaborate on a project, learn more about me, or just say hi, feel free to contact me using any of the social channels listed below.
+Oh and the installation
+`npm install`
+`npm start`
 
-- [Personal Website](https://zackthoutt.com)
-- [Email](mailto:zackarey.thoutt@colorado.edu)
-- [LinkedIn](https://www.linkedin.com/in/zack-thoutt-57275655/)
-- [Twitter](https://twitter.com/zthoutt)
-- [Medium](https://medium.com/@zthoutt)
-- [Quora](https://www.quora.com/profile/Zack-Thoutt)
-- [HackerNews](https://news.ycombinator.com/submitted?id=zthoutt)
-- [Reddit](https://www.reddit.com/user/zthoutt/)
-- [Kaggle](https://www.kaggle.com/zynicide)
-- [Instagram](https://www.instagram.com/zthoutt/)
-- [500px](https://500px.com/zthoutt)
+That should do it. If you update the code, use `npx grunt dev` to build the app again.
 
-# Demo
-![Step 1](demo/step-1.png)
-![Step 2](demo/step-2.png)
-![Step 3](demo/step-3.png)
-![Step 4](demo/step-4.png)
-![Step 5](demo/step-5.png)
-![Step 6](demo/step-6.png)
-![Step 7](demo/step-7.png)
-![Step 8](demo/step-8.png)
-![Step 9](demo/step-9.png)
-![Step 10](demo/step-10.png)
-![Step 11](demo/step-11.png)
-![Step 12](demo/step-12.png)
-![Step 13](demo/step-13.png)
-![Step 14](demo/step-14.png)
-![Step 15](demo/step-15.png)
-![Step 16](demo/step-16.png)
-![Step 17](demo/step-17.png)
-
+I’ll do a better readme file, I swear. I’m just a little busy now.
