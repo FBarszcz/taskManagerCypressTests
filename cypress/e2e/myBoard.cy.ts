@@ -1,43 +1,23 @@
-function createNewBoard() {
-  cy.get('[data-cy="create-board"]').click();
-  cy.get('[data-cy="new-board-input"]').click().clear().type("testing board");
-  cy.get('[data-cy="new-board-create"]').click();
-  cy.url().should("include", "/board/");
-}
-
-function checkIfBoardExists() {
-  cy.visit("http://localhost:3000/");
-  cy.get("body").then((body) => {
-    const numberOfBoards = body.find('[data-cy="board-item"]').length;
-    const doesBoardExist: boolean = numberOfBoards > 0;
-    console.log(doesBoardExist);
-
-    if (doesBoardExist) {
-      let i = numberOfBoards;
-      while (i > 0) {
-        cy.get('[data-cy="board-item"]').first().click();
-        cy.get('[data-cy="board-options"] > .options').click();
-        cy.get('[data-cy="board-options"] > #myDropdown > .delete').click();
-        i--;
-      }
-      createNewBoard();
-    } else {
-      createNewBoard();
-    }
-  });
-}
+import { testData } from "cypress/fixtures/testData";
+import { trelloBoard } from "cypress/selectors/board";
+import { trelloPage } from "cypress/selectors/trello";
+import "../support/commands/commands";
 
 describe("Trello Board tests", () => {
+  beforeEach(() => {
+    cy.checkIfBoardExists();
+  })
+
   it("User is able to create a new board", () => {
-    checkIfBoardExists();
-
+  
     cy.url().should("include", "/board/");
-    cy.get('[data-cy="add-list"]').should("be.visible");
+    cy.get(trelloPage.createABoard).should("be.visible");
   });
-  it("User is able to remove new board", () => {
-    checkIfBoardExists();
 
-    cy.get('[data-cy="board-options"] > .options').click();
-    cy.get('[data-cy="board-options"] > #myDropdown > .delete').click();
+  it.only("User is able to remove new board", () => {
+
+    cy.get(trelloBoard.threeDot).click();
+    cy.get(trelloBoard.dropdownDeleteOption).click();
+    cy.url().should("eq", testData.url);
   });
 });

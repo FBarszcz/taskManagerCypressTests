@@ -1,4 +1,4 @@
-namespace Cypress {
+declare namespace Cypress {
   interface Chainable {
     /**
      * Custom command to select DOM element by data-cy attribute.
@@ -7,6 +7,6 @@ namespace Cypress {
      * @keyof
      *
      */
-    createNewBoard(value: string): Chainable;
+    createNewBoard(value: string): Chainable<Element>;
   }
 }
