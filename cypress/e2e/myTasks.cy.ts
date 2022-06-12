@@ -29,15 +29,19 @@ describe("User is able to work with tasks", () => {
   it("User ads task to list", () => {
     cy.get(trelloTask.elementTask).should("be.visible");
   });
-  it.only("User can change order of the tasks", () => {
+  it.only("User can change order of the tasks by drag and drop", () => {
     cy.createATask();
-    const dataTransfer = new DataTransfer();
-    cy.get('[data-cy="tasks-list"]').last().trigger("dragstart", {
+
+    let dataTransfer = new DataTransfer();
+    cy.get('[data-cy="tasks-list"] > :nth-child(2)').trigger("dragstart", {
       dataTransfer,
     });
-    cy.get('[data-cy="list"]').trigger("drop", {
-      dataTransfer,
-    });
+    cy.get(':nth-child(1) > .container > [data-cy="task-title"]').trigger(
+      "drop",
+      {
+        dataTransfer,
+      }
+    );
   });
   it("User can check information inside the task", () => {});
 });
