@@ -8,9 +8,10 @@ To run this app, you should:
 To run cypress tests from the dashboard, you should:
 
 1. yarn install
-2. yarn cypress open
+2. yarn start
+3. In separate terminal yarn cypress open
 
 To run cypress tests in the headless mode, you should:
 
-1. yarn install
-2. yarn cypress run
+2. yarn start
+3. In separate terminal yarn cypress run

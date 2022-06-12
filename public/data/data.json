@@ -3,7 +3,7 @@
     {
       "name": "testing board",
       "user": 0,
-      "id": 2618640793,
+      "id": 37997086327,
       "starred": false,
       "created": "2022-06-12"
     }
@@ -259,6 +259,11 @@
       "email": "vwVlB@example.com",
       "password": "$2a$10$HAzDCM/zYLmTrhiWKV0FF.MrTebOLbIGhkmpuOjesZEYkK3SNJ2qy",
       "id": 50
+    },
+    {
+      "email": "1yplF@example.com",
+      "password": "$2a$10$5GUlsPwFIC/Yf9BR2p2gWeJ7eyauJqVHu21uN6Ao/azcUJtfylwrS",
+      "id": 51
     }
   ],
   "lists": []
