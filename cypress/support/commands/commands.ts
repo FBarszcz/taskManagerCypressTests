@@ -75,17 +75,48 @@ Cypress.Commands.add("createAList", () => {
 });
 
 Cypress.Commands.add("createATask", () => {
-  function makeId(length) {
-    let result = "";
-    const characters =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    const charactersLength = characters.length;
-    for (var i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
-  }
   cy.get(trelloTask.newTask).click();
-  cy.get(trelloTask.descriptionTask).clear().type(makeId(5));
+  cy.get(trelloTask.descriptionTask).clear().type(createTaskName(5));
   cy.get(trelloTask.saveTask).click();
 });
+
+Cypress.Commands.add("signupApi", ({ email, password }) => {
+  cy.request("POST", "localhost:3000/api/signup", {
+    email,
+    password,
+  }).then(({ body }) => {
+    Cypress.env("users").push(body);
+  });
+});
+
+Cypress.Commands.add("clientLogin", () => {
+  cy.visit(testData.url);
+  cy.get('[data-cy="login-menu"]').click();
+  cy.get('[data-cy="login-email"]').click().clear().type(testData.testingEmail);
+  cy.get('[data-cy="login-password"]')
+    .click()
+    .clear()
+    .type(testData.testingPass);
+  cy.get('[data-cy="login"]').click();
+});
+
+const characters =
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+const charactersLength = characters.length;
+
+export function createTaskName(nameLength) {
+  let taskName = "";
+  for (let i = 0; i < nameLength; i++) {
+    taskName += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return taskName;
+}
+
+export function createEmail(emailLength) {
+  let email = "";
+  for (let i = 0; i < emailLength; i++) {
+    email += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  const fullEmail = email.concat("@example.com");
+  return fullEmail;
+}

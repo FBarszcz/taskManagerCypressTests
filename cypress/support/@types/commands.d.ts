@@ -26,6 +26,11 @@ declare namespace Cypress {
      * Creates a new task in the list
      * @param value
      */
+     clientLogin(): Chainable;
+     /**
+      * Client login process
+      * @param value
+      */
 
     addBoardUi(value: string): Chainable<Element>;
 

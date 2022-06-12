@@ -4,4 +4,6 @@ export enum testData {
   listName = "task A",
   taskName = "task A",
   taskDescription = "test",
+  testingEmail = 'test@example.com',
+  testingPass = 'toto1234',
 }
