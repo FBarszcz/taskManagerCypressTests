@@ -1,6 +1,42 @@
 {
-  "boards": [],
-  "tasks": [],
+  "boards": [
+    {
+      "name": "testing board",
+      "user": 0,
+      "id": 35623580227,
+      "starred": false,
+      "created": "2022-06-12"
+    }
+  ],
+  "tasks": [
+    {
+      "boardId": 35623580227,
+      "description": "",
+      "completed": false,
+      "listId": 30051940552,
+      "title": "i2aiU",
+      "id": 49536009594,
+      "created": "2022-06-12",
+      "deadline": "2022-06-15"
+    },
+    {
+      "boardId": 35623580227,
+      "description": "",
+      "completed": false,
+      "listId": 30051940552,
+      "title": "QHI3R",
+      "id": 86328733622,
+      "created": "2022-06-12",
+      "deadline": "2022-06-15"
+    }
+  ],
   "users": [],
-  "lists": []
+  "lists": [
+    {
+      "boardId": 35623580227,
+      "title": "task A",
+      "id": 30051940552,
+      "created": "2022-06-12"
+    }
+  ]
 }

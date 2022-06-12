@@ -2,9 +2,10 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["es5", "dom"],
-    "types": ["cypress", "cypress-real-events", "node", "./support"],
+    "types": ["cypress", "cypress-real-events", "node", "./support", "@4tw/cypress-drag-drop"],
     "allowJs": true,
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "moduleResolution": "node",
   },
   "include": [
     "**/*.ts"

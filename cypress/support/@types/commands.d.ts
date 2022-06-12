@@ -15,10 +15,16 @@ declare namespace Cypress {
      * Checks if there is unnecassery board
      */
 
+    createAList(): Chainable;
+    /**
+     * Creates a new list on the board
+     * @param value
+     */
+
     createATask(): Chainable;
     /**
-     * Creates a new task on the board
-     * @param value 
+     * Creates a new task in the list
+     * @param value
      */
 
     addBoardUi(value: string): Chainable<Element>;

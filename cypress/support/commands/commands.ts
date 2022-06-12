@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 import { testData } from "cypress/fixtures/testData";
-import { trelloBoard, trelloTask } from "cypress/selectors/board";
+import { trelloBoard, trelloList, trelloTask } from "cypress/selectors/board";
 import { trelloPage } from "cypress/selectors/trello";
 
 // ***********************************************
@@ -68,8 +68,25 @@ Cypress.Commands.add("checkIfBoardExists", () => {
     }
   });
 });
+Cypress.Commands.add("createAList", () => {
+  cy.get(trelloList.createNewList).click();
+  cy.get(trelloList.nameList).click().clear().type(testData.listName);
+  cy.get(trelloList.saveList).click();
+});
+
 Cypress.Commands.add("createATask", () => {
-  cy.get(trelloTask.createNewTask).click();
-  cy.get(trelloTask.taskName).click().clear().type(testData.taskName);
+
+  function makeid(length) {
+    let result           = '';
+    const characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * 
+ charactersLength));
+   }
+   return result;
+}
+  cy.get(trelloTask.newTask).click();
+  cy.get(trelloTask.descriptionTask).clear().type(makeid(5));
   cy.get(trelloTask.saveTask).click();
-})
+});
