@@ -35,18 +35,25 @@ describe("User is able to work with tasks", () => {
   });
   it("User can change order of the tasks by drag and drop", () => {
     cy.createATask();
+
+    cy.get(trelloTask.secoundTask).click();
+    cy.addTaskComment();
+    cy.get(trelloTaskDescription.descriptionFilled).contains(
+      testData.taskDescription
+    );
+    cy.get(trelloTaskDescription.threeDot).click();
+    cy.get(trelloTaskDescription.closeModal).click();
+
     cy.get(trelloTask.secoundTask).drag(trelloList.listOfLists);
+    cy.get(trelloTask.firstTask).click();
+    cy.get(trelloTaskDescription.descriptionFilled).contains(
+      testData.taskDescription
+    );
   });
 
   it("User can add information inside the task", () => {
     cy.get(trelloTask.elementTask).click();
-    cy.get(trelloTaskDescription.listName).contains(testData.taskName);
-    cy.get(trelloTaskDescription.description).click();
-    cy.get(trelloTaskDescription.textField)
-      .click()
-      .clear()
-      .type(testData.taskDescription);
-    cy.get(trelloTaskDescription.saveDescription).click();
+    cy.addTaskComment();
     cy.get(trelloTaskDescription.descriptionFilled).contains(
       testData.taskDescription
     );

@@ -17,6 +17,7 @@ export enum trelloTask {
   descriptionTask = '[data-cy="task-input"]',
   saveTask = '[data-cy="add-task"]',
   elementTask ='[data-cy="task"]',
+  firstTask = '[data-cy="tasks-list"] > :nth-child(1)',
   secoundTask = '[data-cy="tasks-list"] > :nth-child(2)',
 }
 
@@ -26,6 +27,8 @@ export enum trelloTaskDescription{
   descriptionFilled = '.TaskModule_description',
   textField = '[data-cy="task-description-input"]',
   saveDescription = '[data-cy="task-description-save"]',
+  threeDot = '[data-cy="task-module-close"] > .options',
+  closeModal = '[data-cy="task-dropdown"] > :nth-child(1)',
   
 
 }

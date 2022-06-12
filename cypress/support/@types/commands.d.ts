@@ -34,7 +34,11 @@ declare namespace Cypress {
 
     signupApi(options: { email: string; password: string }): Chainable<Element>;
       /**
-     * signup via API
+     * Signup via API
+     */
+    addTaskComment() :Chainable;
+    /**
+     * Add comment to already created task in the list
      */
   }
 }

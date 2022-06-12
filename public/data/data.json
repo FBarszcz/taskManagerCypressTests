@@ -3,52 +3,12 @@
     {
       "name": "testing board",
       "user": 0,
-      "id": 11334607861,
-      "starred": false,
-      "created": "2022-06-12"
-    },
-    {
-      "name": "testing board",
-      "user": 0,
-      "id": 55730450610,
+      "id": 2618640793,
       "starred": false,
       "created": "2022-06-12"
     }
   ],
-  "tasks": [
-    {
-      "boardId": 11334607861,
-      "description": "",
-      "completed": false,
-      "listId": 43113236510,
-      "title": "MEYKR",
-      "id": 13939885380,
-      "created": "2022-06-12",
-      "deadline": "2022-06-15",
-      "order": 1
-    },
-    {
-      "boardId": 11334607861,
-      "description": "",
-      "completed": false,
-      "listId": 43113236510,
-      "title": "Cdr1b",
-      "id": 69453480676,
-      "created": "2022-06-12",
-      "deadline": "2022-06-15",
-      "order": 0
-    },
-    {
-      "boardId": 55730450610,
-      "description": "test",
-      "completed": false,
-      "listId": 61014976104,
-      "title": "v7MJo",
-      "id": 21923250518,
-      "created": "2022-06-12",
-      "deadline": "2022-06-15"
-    }
-  ],
+  "tasks": [],
   "users": [
     {
       "email": "test@example.com",
@@ -294,20 +254,12 @@
       "email": "mAhR5@example.com",
       "password": "$2a$10$EyQGtFWjka61OPNpR2YyjuxpecxtMuv3Jupo.8FwzpLsOb/HXXbze",
       "id": 49
-    }
-  ],
-  "lists": [
-    {
-      "boardId": 11334607861,
-      "title": "task A",
-      "id": 43113236510,
-      "created": "2022-06-12"
     },
     {
-      "boardId": 55730450610,
-      "title": "task A",
-      "id": 61014976104,
-      "created": "2022-06-12"
+      "email": "vwVlB@example.com",
+      "password": "$2a$10$HAzDCM/zYLmTrhiWKV0FF.MrTebOLbIGhkmpuOjesZEYkK3SNJ2qy",
+      "id": 50
     }
-  ]
+  ],
+  "lists": []
 }

@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 import { testData } from "cypress/fixtures/testData";
-import { trelloBoard, trelloList, trelloTask } from "cypress/selectors/board";
+import { trelloBoard, trelloList, trelloTask, trelloTaskDescription } from "cypress/selectors/board";
 import { trelloLoginModal, trelloPage } from "cypress/selectors/trello";
 
 // ***********************************************
@@ -99,6 +99,14 @@ Cypress.Commands.add("clientLogin", () => {
     .type(testData.testingPass);
   cy.get(trelloLoginModal.login).click();
 });
+Cypress.Commands.add("addTaskComment", () => {
+cy.get(trelloTaskDescription.listName).contains(testData.taskName);
+    cy.get(trelloTaskDescription.description).click();
+    cy.get(trelloTaskDescription.textField)
+      .click()
+      .clear()
+      .type(testData.taskDescription);
+    cy.get(trelloTaskDescription.saveDescription).click()});
 
 const characters =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
