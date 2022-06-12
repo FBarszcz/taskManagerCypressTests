@@ -7,6 +7,7 @@ export enum trelloPage {
   loggedUser = '[data-cy="logged-user"]',
   logout = "span",
   loginMessage = "#loginMessage",
+  title = ".background_container > :nth-child(3)",
 }
 
 export enum trelloLoginModal {

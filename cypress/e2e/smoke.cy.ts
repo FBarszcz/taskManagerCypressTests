@@ -1,6 +1,15 @@
-describe('Smoke test', () => {
-  it('passes', () => {
-    cy.visit('http://localhost:3000/')
-    cy.get('.background_container > :nth-child(3)').contains('My Board')
-  })
-})
+import { testData } from "cypress/fixtures/testData";
+import { trelloPage } from "cypress/selectors/trello";
+
+describe("Smoke test", () => {
+  beforeEach(() => {
+    cy.checkIfBoardExists();
+  });
+
+  it("passes", () => {
+    cy.visit(testData.url);
+    cy.get(trelloPage.title).contains("My Board");
+    cy.get(trelloPage.createABoard).should('be.visible');
+    cy.get(trelloPage.loginButton).should('be.visible');
+  });
+});

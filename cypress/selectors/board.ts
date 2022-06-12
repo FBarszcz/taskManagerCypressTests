@@ -9,6 +9,7 @@ export enum trelloList {
   threeDotList = '[data-cy="list"] > .dropdown > .options',
   deleteList = '[data-cy="list"] > .dropdown > #myDropdown > .delete',
   listOfLists = '[data-cy="list"]',
+  
 }
 
 export enum trelloTask {
@@ -16,6 +17,7 @@ export enum trelloTask {
   descriptionTask = '[data-cy="task-input"]',
   saveTask = '[data-cy="add-task"]',
   elementTask ='[data-cy="task"]',
+  secoundTask = '[data-cy="tasks-list"] > :nth-child(2)',
 }
 
 export enum trelloTaskDescription{

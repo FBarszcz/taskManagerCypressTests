@@ -1,5 +1,4 @@
 import {
-  trelloBoard,
   trelloList,
   trelloTask,
   trelloTaskDescription,
@@ -36,7 +35,7 @@ describe("User is able to work with tasks", () => {
   });
   it("User can change order of the tasks by drag and drop", () => {
     cy.createATask();
-    cy.get('[data-cy="tasks-list"] > :nth-child(2)').drag('[data-cy="list"]');
+    cy.get(trelloTask.secoundTask).drag(trelloList.listOfLists);
   });
 
   it("User can add information inside the task", () => {
