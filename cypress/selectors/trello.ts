@@ -5,9 +5,9 @@ export enum trelloPage {
   existingBoard = '[data-cy="board-item"]',
   loginButton = '[data-cy="login-menu"]',
   loggedUser = '[data-cy="logged-user"]',
-  logout = "span",
-  loginMessage = "#loginMessage",
-  title = ".background_container > :nth-child(3)",
+  logout = 'span',
+  loginMessage = '#loginMessage',
+  title = '.background_container > :nth-child(3)',
 }
 
 export enum trelloLoginModal {

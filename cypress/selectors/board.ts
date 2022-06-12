@@ -22,7 +22,7 @@ export enum trelloTask {
 }
 
 export enum trelloTaskDescription{
-  listName = ".TaskModule_list",
+  listName = '.TaskModule_list',
   description = '[data-cy="task-description"]',
   descriptionFilled = '.TaskModule_description',
   textField = '[data-cy="task-description-input"]',
