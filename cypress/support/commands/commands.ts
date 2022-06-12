@@ -2,7 +2,7 @@
 
 import { testData } from "cypress/fixtures/testData";
 import { trelloBoard, trelloList, trelloTask } from "cypress/selectors/board";
-import { trelloPage } from "cypress/selectors/trello";
+import { trelloLoginModal, trelloPage } from "cypress/selectors/trello";
 
 // ***********************************************
 // This example commands.ts shows you how to
@@ -91,13 +91,13 @@ Cypress.Commands.add("signupApi", ({ email, password }) => {
 
 Cypress.Commands.add("clientLogin", () => {
   cy.visit(testData.url);
-  cy.get('[data-cy="login-menu"]').click();
-  cy.get('[data-cy="login-email"]').click().clear().type(testData.testingEmail);
-  cy.get('[data-cy="login-password"]')
+  cy.get(trelloPage.loginButton).click();
+  cy.get(trelloLoginModal.username).click().clear().type(testData.testingEmail);
+  cy.get(trelloLoginModal.password)
     .click()
     .clear()
     .type(testData.testingPass);
-  cy.get('[data-cy="login"]').click();
+  cy.get(trelloLoginModal.login).click();
 });
 
 const characters =

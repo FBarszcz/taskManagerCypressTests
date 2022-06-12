@@ -39,7 +39,7 @@ describe("User is able to work with tasks", () => {
     cy.get('[data-cy="tasks-list"] > :nth-child(2)').drag('[data-cy="list"]');
   });
 
-  it.only("User can add information inside the task", () => {
+  it("User can add information inside the task", () => {
     cy.get(trelloTask.elementTask).click();
     cy.get(trelloTaskDescription.listName).contains(testData.taskName);
     cy.get(trelloTaskDescription.description).click();
@@ -48,7 +48,7 @@ describe("User is able to work with tasks", () => {
       .clear()
       .type(testData.taskDescription);
     cy.get(trelloTaskDescription.saveDescription).click();
-    cy.get(trelloTaskDescription.description).contains(
+    cy.get(trelloTaskDescription.descriptionFilled).contains(
       testData.taskDescription
     );
   });
