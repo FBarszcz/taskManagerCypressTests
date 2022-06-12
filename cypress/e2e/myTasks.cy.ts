@@ -1,7 +1,12 @@
-import { testData } from "cypress/fixtures/testData";
-import { trelloBoard, trelloList, trelloTask } from "cypress/selectors/board";
-import { trelloPage } from "cypress/selectors/trello";
+import {
+  trelloBoard,
+  trelloList,
+  trelloTask,
+  trelloTaskDescription,
+} from "cypress/selectors/board";
 import "../support/commands/commands";
+import "@4tw/cypress-drag-drop";
+import { testData } from "cypress/fixtures/testData";
 
 describe("Trello Board tests", () => {
   beforeEach(() => {
@@ -26,22 +31,25 @@ describe("User is able to work with tasks", () => {
     cy.createAList();
     cy.createATask();
   });
-  it("User ads task to list", () => {
+  it("User adds a task to the list", () => {
     cy.get(trelloTask.elementTask).should("be.visible");
   });
-  it.only("User can change order of the tasks by drag and drop", () => {
+  it("User can change order of the tasks by drag and drop", () => {
     cy.createATask();
+    cy.get('[data-cy="tasks-list"] > :nth-child(2)').drag('[data-cy="list"]');
+  });
 
-    let dataTransfer = new DataTransfer();
-    cy.get('[data-cy="tasks-list"] > :nth-child(2)').trigger("dragstart", {
-      dataTransfer,
-    });
-    cy.get(':nth-child(1) > .container > [data-cy="task-title"]').trigger(
-      "drop",
-      {
-        dataTransfer,
-      }
+  it.only("User can add information inside the task", () => {
+    cy.get(trelloTask.elementTask).click();
+    cy.get(trelloTaskDescription.listName).contains(testData.taskName);
+    cy.get(trelloTaskDescription.description).click();
+    cy.get(trelloTaskDescription.textField)
+      .click()
+      .clear()
+      .type(testData.taskDescription);
+    cy.get(trelloTaskDescription.saveDescription).click();
+    cy.get(trelloTaskDescription.description).contains(
+      testData.taskDescription
     );
   });
-  it("User can check information inside the task", () => {});
 });

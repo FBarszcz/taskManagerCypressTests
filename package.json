@@ -11,6 +11,7 @@
     "vue": "vue/dist/vue.common.js"
   },
   "devDependencies": {
+    "@4tw/cypress-drag-drop": "^2.1.0",
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.10",
     "@cypress/code-coverage": "^3.8.7",

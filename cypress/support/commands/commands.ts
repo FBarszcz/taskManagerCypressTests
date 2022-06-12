@@ -75,18 +75,17 @@ Cypress.Commands.add("createAList", () => {
 });
 
 Cypress.Commands.add("createATask", () => {
-
-  function makeid(length) {
-    let result           = '';
-    const characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  function makeId(length) {
+    let result = "";
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     const charactersLength = characters.length;
-    for ( var i = 0; i < length; i++ ) {
-      result += characters.charAt(Math.floor(Math.random() * 
- charactersLength));
-   }
-   return result;
-}
+    for (var i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  }
   cy.get(trelloTask.newTask).click();
-  cy.get(trelloTask.descriptionTask).clear().type(makeid(5));
+  cy.get(trelloTask.descriptionTask).clear().type(makeId(5));
   cy.get(trelloTask.saveTask).click();
 });

@@ -3,4 +3,5 @@ export enum testData {
   boardName = "testing board",
   listName = "task A",
   taskName = "task A",
+  taskDescription = "test",
 }

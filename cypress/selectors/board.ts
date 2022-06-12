@@ -17,3 +17,12 @@ export enum trelloTask {
   saveTask = '[data-cy="add-task"]',
   elementTask ='[data-cy="task"]',
 }
+
+export enum trelloTaskDescription{
+  listName = ".TaskModule_list",
+  description = '[data-cy="task-description"]',
+  textField = '[data-cy="task-description-input"]',
+  saveDescription = '[data-cy="task-description-save"]',
+  
+
+}

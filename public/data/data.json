@@ -3,29 +3,19 @@
     {
       "name": "testing board",
       "user": 0,
-      "id": 68083947542,
+      "id": 58510140134,
       "starred": false,
       "created": "2022-06-12"
     }
   ],
   "tasks": [
     {
-      "boardId": 68083947542,
-      "description": "",
+      "boardId": 58510140134,
+      "description": "test",
       "completed": false,
-      "listId": 9227098835,
-      "title": "ywjNA",
-      "id": 77288539420,
-      "created": "2022-06-12",
-      "deadline": "2022-06-15"
-    },
-    {
-      "boardId": 68083947542,
-      "description": "",
-      "completed": false,
-      "listId": 9227098835,
-      "title": "wXdvo",
-      "id": 80369100948,
+      "listId": 29119708625,
+      "title": "vim7I",
+      "id": 35528074649,
       "created": "2022-06-12",
       "deadline": "2022-06-15"
     }
@@ -33,9 +23,9 @@
   "users": [],
   "lists": [
     {
-      "boardId": 68083947542,
+      "boardId": 58510140134,
       "title": "task A",
-      "id": 9227098835,
+      "id": 29119708625,
       "created": "2022-06-12"
     }
   ]
